@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duyuru Story Serisi</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #111;
+      display: flex;
+      gap: 24px;
+      padding: 24px;
+      font-family: 'Inter', sans-serif;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .story {
+      width: 400px;
+      height: 711px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      flex-shrink: 0;
+    }
+
+    /* ══════════════════════════════
+       STORY 1 — WEB SİTESİ LANSMANΙ
+       ══════════════════════════════ */
+    .s1 {
+      background: linear-gradient(165deg, #0d2b45 0%, #1a3a5c 45%, #2e6da4 100%);
+    }
+
+    /* Dekoratif daireler */
+    .s1-circle1 {
+      position: absolute;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(74,155,142,0.18), transparent 70%);
+      top: -60px; right: -80px;
+    }
+
+    .s1-circle2 {
+      position: absolute;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(46,109,164,0.2), transparent 70%);
+      bottom: 80px; left: -50px;
+    }
+
+    .s1-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 32px;
+    }
+
+    .s1-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: auto;
+    }
+
+    .s1-tag {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: rgba(255,255,255,0.9);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    .s1-logo {
+      color: rgba(255,255,255,0.6);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    /* Büyük rakam/ikon */
+    .s1-icon-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 32px 0 28px;
+    }
+
+    .s1-globe {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4a9b8e, #2e6da4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      box-shadow: 0 12px 40px rgba(74,155,142,0.4);
+      margin-bottom: 16px;
+    }
+
+    .s1-new-badge {
+      background: #e05a3a;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+    }
+
+    .s1-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.18;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .s1-headline em {
+      font-style: italic;
+      color: #a8d8ea;
+    }
+
+    .s1-sub {
+      font-size: 13px;
+      color: rgba(255,255,255,0.72);
+      text-align: center;
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    .s1-url-box {
+      background: rgba(255,255,255,0.1);
+      border: 1.5px solid rgba(255,255,255,0.2);
+      border-radius: 14px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .s1-url-icon {
+      font-size: 20px;
+    }
+
+    .s1-url-text {
+      flex: 1;
+    }
+
+    .s1-url-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 2px;
+    }
+
+    .s1-url {
+      font-size: 15px;
+      font-weight: 700;
+      color: #a8d8ea;
+      letter-spacing: 0.3px;
+    }
+
+    .s1-arrow {
+      font-size: 18px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .s1-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .s1-feat {
+      background: rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .s1-feat span:first-child { font-size: 14px; }
+
+    .s1-feat span:last-child {
+      font-size: 11px;
+      color: rgba(255,255,255,0.75);
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .s1-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .s1-hashtag {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      font-weight: 600;
+    }
+
+    .s1-swipe {
+      font-size: 11px;
+      color: rgba(255,255,255,0.5);
+      font-weight: 500;
+    }
+
+    /* ══════════════════════════════
+       STORY 2 — CHANGE.ORG İMZA
+       ══════════════════════════════ */
+    .s2 {
+      background: linear-gradient(170deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    }
+
+    .s2-accent {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #e05a3a, #c8973a, #e05a3a);
+    }
+
+    .s2-glow {
+      position: absolute;
+      width: 350px; height: 350px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(224,90,58,0.12), transparent 65%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .s2-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 36px 32px;
+    }
+
+    .s2-tag {
+      align-self: flex-start;
+      background: rgba(224,90,58,0.2);
+      border: 1px solid rgba(224,90,58,0.4);
+      color: #f0876a;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+    }
+
+    .s2-big-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 90px;
+      font-weight: 700;
+      color: #e05a3a;
+      line-height: 0.9;
+      margin-bottom: 4px;
+    }
+
+    .s2-big-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 24px;
+    }
+
+    .s2-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .s2-body {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.7;
+      margin-bottom: auto;
+    }
+
+    .s2-cta-box {
+      background: #e05a3a;
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin-bottom: 16px;
+    }
+
+    .s2-cta-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 4px;
+    }
+
+    .s2-cta-url {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .s2-steps {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .s2-step {
+      flex: 1;
+      background: rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 10px 8px;
+      text-align: center;
+    }
+
+    .s2-step .step-icon { font-size: 16px; margin-bottom: 4px; }
+    .s2-step .step-text { font-size: 10px; color: rgba(255,255,255,0.6); font-weight: 500; line-height: 1.3; }
+
+    .s2-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .s2-logo { font-size: 11px; color: rgba(255,255,255,0.35); font-weight: 600; }
+    .s2-hashtag { font-size: 11px; color: rgba(255,255,255,0.35); font-weight: 600; }
+
+    /* ══════════════════════════════
+       STORY 3 — FİZİKSEL İMZA / ESNAF
+       ══════════════════════════════ */
+    .s3 {
+      background: linear-gradient(160deg, #f5efe6 0%, #ede4d8 60%, #e0d4c4 100%);
+    }
+
+    .s3-top-bar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #1a3a5c, #4a9b8e);
+    }
+
+    .s3-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 36px 32px;
+    }
+
+    .s3-tag {
+      align-self: flex-start;
+      background: rgba(26,58,92,0.1);
+      border: 1px solid rgba(26,58,92,0.2);
+      color: #1a3a5c;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .s3-tomorrow {
+      background: #e05a3a;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 16px;
+      align-self: flex-start;
+    }
+
+    .s3-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #1a3a5c;
+      line-height: 1.18;
+      margin-bottom: 14px;
+    }
+
+    .s3-sub {
+      font-size: 13px;
+      color: #6b7a8d;
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    /* İmza süreci adımları */
+    .s3-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: auto;
+    }
+
+    .s3-step {
+      background: #fff;
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 2px 12px rgba(26,58,92,0.07);
+    }
+
+    .s3-step-num {
+      width: 34px; height: 34px; min-width: 34px;
+      background: #1a3a5c;
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 13px;
+    }
+
+    .s3-step-text {
+      font-size: 12.5px;
+      color: #2d2d2d;
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .s3-step-text strong { color: #1a3a5c; }
+
+    /* Site duyurusu */
+    .s3-site-box {
+      background: linear-gradient(135deg, #1a3a5c, #2e6da4);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .s3-site-icon { font-size: 24px; }
+
+    .s3-site-text { flex: 1; }
+
+    .s3-site-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 2px;
+    }
+
+    .s3-site-url {
+      font-size: 13px;
+      font-weight: 700;
+      color: #a8d8ea;
+    }
+
+    .s3-site-desc {
+      font-size: 10.5px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 1px;
+    }
+
+    .s3-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .s3-logo { font-size: 11px; color: #6b7a8d; font-weight: 600; }
+    .s3-hashtag { font-size: 11px; color: #6b7a8d; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <!-- STORY 1: WEB SİTESİ LANSMANI -->
+  <div class="story s1">
+    <div class="s1-circle1"></div>
+    <div class="s1-circle2"></div>
+    <div class="s1-content">
+
+      <div class="s1-top">
+        <div class="s1-tag">🚀 Duyuru</div>
+        <div class="s1-logo">@otekiadalar</div>
+      </div>
+
+      <div class="s1-icon-wrap">
+        <div class="s1-globe">🌐</div>
+        <div class="s1-new-badge">Yeni</div>
+      </div>
+
+      <div class="s1-headline">
+        Kampanya sitemiz<br><em>yayında.</em>
+      </div>
+
+      <div class="s1-sub">
+        Tüm bilgiler, talepler ve imza kampanyası<br>
+        artık tek bir yerde.
+      </div>
+
+      <div class="s1-url-box">
+        <div class="s1-url-icon">🔗</div>
+        <div class="s1-url-text">
+          <div class="s1-url-label">Web Sitesi</div>
+          <div class="s1-url">otekiadalar.github.io</div>
+        </div>
+        <div class="s1-arrow">→</div>
+      </div>
+
+      <div class="s1-features">
+        <div class="s1-feat">
+          <span>✍️</span>
+          <span>Online imza kampanyası</span>
+        </div>
+        <div class="s1-feat">
+          <span>📊</span>
+          <span>Tarife karşılaştırması</span>
+        </div>
+        <div class="s1-feat">
+          <span>📋</span>
+          <span>Taleplerimiz</span>
+        </div>
+        <div class="s1-feat">
+          <span>🗣️</span>
+          <span>Ada sesleri</span>
+        </div>
+      </div>
+
+      <div class="s1-footer">
+        <div class="s1-hashtag">#AdalarEşitlik</div>
+        <div class="s1-swipe">Devam →</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- STORY 2: CHANGE.ORG İMZA -->
+  <div class="story s2">
+    <div class="s2-accent"></div>
+    <div class="s2-glow"></div>
+    <div class="s2-content">
+
+      <div class="s2-tag">✍️ İmza Kampanyası</div>
+
+      <div class="s2-big-num">İmza</div>
+      <div class="s2-big-label">kampanyası başladı</div>
+
+      <div class="s2-headline">
+        Online imzanı<br>şimdi ver.
+      </div>
+
+      <div class="s2-body">
+        Kınalıada ve Burgazada'da yaşıyor musun, bu adaları seviyor musun?
+        Kaldırılan gece ve sabah seferlerinin iadesi için sesini ekle.
+        Topladığımız imzaları yetkililere birlikte ileteceğiz.
+      </div>
+
+      <div class="s2-steps">
+        <div class="s2-step">
+          <div class="step-icon">📲</div>
+          <div class="step-text">Linke git</div>
+        </div>
+        <div class="s2-step">
+          <div class="step-icon">✍️</div>
+          <div class="step-text">İmzala</div>
+        </div>
+        <div class="s2-step">
+          <div class="step-icon">📣</div>
+          <div class="step-text">Paylaş</div>
+        </div>
+      </div>
+
+      <div class="s2-cta-box">
+        <div class="s2-cta-label">İmza Bağlantısı</div>
+        <div class="s2-cta-url">c.org/pWKvt4kzJh</div>
+      </div>
+
+      <div class="s2-footer">
+        <div class="s2-logo">@otekiadalar</div>
+        <div class="s2-hashtag">#KınalıyaVapur</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- STORY 3: FİZİKSEL İMZA / ESNAF -->
+  <div class="story s3">
+    <div class="s3-top-bar"></div>
+    <div class="s3-content">
+
+      <div class="s3-tag">📝 Fiziksel İmza</div>
+
+      <div class="s3-tomorrow">Yarından İtibaren</div>
+
+      <div class="s3-headline">
+        Dilekçeler<br>esnafta.
+      </div>
+
+      <div class="s3-sub">
+        Online imzanın yanı sıra fiziksel dilekçeler de
+        ada esnafında imzaya açılıyor. Geçerken bırak.
+      </div>
+
+      <div class="s3-steps">
+        <div class="s3-step">
+          <div class="s3-step-num">1</div>
+          <div class="s3-step-text"><strong>Ada esnafını ziyaret et</strong> — dilekçeler seçili noktalarda hazır olacak.</div>
+        </div>
+        <div class="s3-step">
+          <div class="s3-step-num">2</div>
+          <div class="s3-step-text"><strong>İmzala ve bırak</strong> — ad, soyad ve ikametgah yeterli.</div>
+        </div>
+        <div class="s3-step">
+          <div class="s3-step-num">3</div>
+          <div class="s3-step-text"><strong>Çevrendekine haber ver</strong> — komşunun, esnafının haberi olsun.</div>
+        </div>
+      </div>
+
+      <div class="s3-site-box">
+        <div class="s3-site-icon">📡</div>
+        <div class="s3-site-text">
+          <div class="s3-site-label">Tüm Gelişmeler</div>
+          <div class="s3-site-url">otekiadalar.github.io</div>
+          <div class="s3-site-desc">Duyurular web sitemizde yayımlanacak</div>
+        </div>
+      </div>
+
+      <div class="s3-footer">
+        <div class="s3-logo">@otekiadalar</div>
+        <div class="s3-hashtag">#BurgazaVapur</div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

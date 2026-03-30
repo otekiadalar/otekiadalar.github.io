@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Öteki Adalar — Kınalıada ve Burgazada İçin Sefer Talebi</title>
+  <meta name="description" content="Kınalıada ve Burgazada sakinleri, 2026 Bahar Tarifesi ile kaldırılan deniz seferlerinin iadesi için kampanya yürütüyor.">
+  <meta property="og:title" content="Öteki Adalar — Kınalıada ve Burgazada İçin Sefer Talebi">
+  <meta property="og:description" content="21:45'ten sonra adaya dönemiyoruz. 06:30'da adadan çıkamıyoruz. İki yönlü ulaşım ablukasını kıralım.">
+  <meta property="og:image" content="ada-gorselleri/1.jpg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a3a5c;
+      --sea: #2e6da4;
+      --teal: #4a9b8e;
+      --sand: #f5efe6;
+      --cream: #fdfaf5;
+      --coral: #e05a3a;
+      --gold: #c8973a;
+      --text: #2d2d2d;
+      --muted: #6b7a8d;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(26,58,92,0.95);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      height: 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      font-size: 1.05rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover { color: #fff; }
+
+    .nav-cta {
+      background: var(--coral) !important;
+      color: #fff !important;
+      padding: 7px 16px;
+      border-radius: 30px;
+      font-size: 0.82rem !important;
+      font-weight: 600 !important;
+      transition: background 0.2s, transform 0.2s !important;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .nav-cta:hover { background: #c94e30 !important; transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 24px 140px;
+      overflow: hidden;
+      background: linear-gradient(160deg, #0d2b45 0%, #1a3a5c 40%, #2e6da4 80%, #4a9b8e 100%);
+    }
+
+    /* Hareketli arka plan saatleri */
+    .hero-timecode {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .tc-item {
+      position: absolute;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: rgba(255,255,255,0.07);
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    /* Dalga */
+    .hero-wave {
+      position: absolute;
+      bottom: -1px;
+      left: 0; right: 0;
+      height: 100px;
+      background: var(--cream);
+      clip-path: ellipse(55% 100% at 50% 100%);
+      z-index: 1;
+    }
+
+    /* Çiçek süslemeleri */
+    .flowers-left, .flowers-right {
+      position: absolute;
+      top: 60px; bottom: 100px;
+      width: 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .flowers-left { left: 0; }
+    .flowers-right { right: 0; }
+
+    /* Hero içerik */
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-badge {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 6vw, 4.2rem);
+      color: #fff;
+      line-height: 1.18;
+      max-width: 680px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: #a8d8ea;
+    }
+
+    .hero-sub {
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      color: rgba(255,255,255,0.82);
+      max-width: 500px;
+      margin: 0 auto 36px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-primary {
+      background: var(--coral);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(224,90,58,0.4);
+    }
+    .btn-primary:hover { background: #c94e30; transform: translateY(-2px); }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.5);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.25); transform: translateY(-2px); }
+
+    .btn-teal {
+      background: var(--teal);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(74,155,142,0.35);
+    }
+    .btn-teal:hover { background: #3d8a7e; transform: translateY(-2px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--navy);
+      border: 2px solid var(--navy);
+    }
+    .btn-outline:hover { background: var(--navy); color: #fff; }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 80px 24px; }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      color: var(--navy);
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 580px;
+      margin-bottom: 44px;
+    }
+
+    .section-flowers {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      opacity: 0.45;
+      font-size: 1.2rem;
+    }
+
+    /* ─── GÖRSEL BANT ─── */
+    #gorsel-bant {
+      padding: 0;
+      overflow: hidden;
+      height: 300px;
+      position: relative;
+    }
+
+    .photo-strip {
+      display: flex;
+      height: 100%;
+      gap: 3px;
+    }
+
+    .photo-strip .photo {
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+      background-color: #1a3a5c; /* fallback: görseller yüklenene kadar */
+      transition: flex 0.45s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-strip .photo:hover { flex: 2.2; }
+
+    .photo::after {
+      content: attr(data-label);
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(26,58,92,0.88));
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 28px 14px 10px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      letter-spacing: 0.5px;
+    }
+    .photo:hover::after { opacity: 1; }
+
+    /* ─── SORUN ─── */
+    #sorun { background: var(--cream); }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .problem-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 28px;
+      border: 1px solid rgba(26,58,92,0.08);
+      box-shadow: 0 2px 18px rgba(26,58,92,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .problem-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+    }
+
+    .problem-card.gece::before    { background: linear-gradient(90deg, #1a3a5c, #2e6da4); }
+    .problem-card.sabah::before   { background: linear-gradient(90deg, var(--coral), var(--gold)); }
+    .problem-card.esit::before    { background: linear-gradient(90deg, var(--teal), #2e6da4); }
+    .problem-card.kirilgan::before { background: linear-gradient(90deg, var(--gold), var(--coral)); }
+
+    .problem-icon { font-size: 1.9rem; margin-bottom: 14px; }
+
+    .problem-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+
+    .problem-card p { font-size: 0.93rem; color: var(--muted); line-height: 1.7; }
+    .problem-card strong { color: var(--text); }
+
+    /* ─── VAPUR PAYLAŞIM ─── */
+    #paylasim {
+      padding: 70px 24px 80px;
+      position: relative;
+      overflow: hidden;
+      /* Gündüz denizi — vapur görseli beyaz bgyla uyumlu */
+      background: linear-gradient(180deg, #e8f4f9 0%, #d0eaf5 40%, #b8dff0 100%);
+    }
+
+    #paylasim .container { text-align: center; position: relative; z-index: 1; }
+
+    #paylasim .section-label { color: var(--sea); }
+    #paylasim h2 { color: var(--navy); }
+    #paylasim .lead { color: var(--muted); margin: 0 auto 40px; }
+
+    /* Sahne */
+    .ferry-scene {
+      position: relative;
+      height: 180px;
+      max-width: 680px;
+      margin: 0 auto 28px;
+      overflow: hidden;
+      border-radius: 24px;
+      /* Gökyüzü-su geçişi */
+      background: linear-gradient(180deg, #cce8f4 0%, #a8d8ef 55%, #6fb8d8 56%, #5aaac8 100%);
+    }
+
+    /* Dalga animasyonu — sahne içinde, vapur bunun üzerinde */
+    .wave-strip {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 64px;
+      overflow: hidden;
+    }
+
+    .wave-strip svg {
+      position: absolute;
+      bottom: 0;
+      width: 200%;
+      animation: waveScroll 4s linear infinite;
+    }
+
+    @keyframes waveScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* İskele */
+    .dock {
+      position: absolute;
+      bottom: 60px;   /* dalgaların üstüne oturur */
+      left: 0;
+      width: 80px;
+      height: 22px;
+      background: #7a5c35;
+      border-radius: 3px 3px 0 0;
+      z-index: 6;
+    }
+    .dock::before {
+      content: '';
+      position: absolute;
+      top: -10px; left: 36px;
+      width: 8px; height: 14px;
+      background: #5d4428;
+      border-radius: 2px 2px 0 0;
+    }
+
+    /* Kişi */
+    .person-figure {
+      position: absolute;
+      bottom: 82px;   /* iskelenin üstünde */
+      left: 22px;
+      font-size: 30px;
+      line-height: 1;
+      z-index: 7;
+      transition: transform 0.4s, opacity 0.5s;
+    }
+
+    .person-figure.waving {
+      animation: wave-hand 0.5s ease 0.8s 3;
+    }
+
+    @keyframes wave-hand {
+      0%, 100% { transform: rotate(0deg); }
+      50%       { transform: rotate(-15deg) translateX(-3px); }
+    }
+
+    /* Vapur — sallanma wrapper'ı (animasyon burada) */
+    .ferry-bob {
+      position: absolute;
+      bottom: 38px;
+      left: 80px;
+      z-index: 5;
+      animation: boatBob 3s ease-in-out infinite;
+    }
+
+    .ferry-bob.stopped { animation: none; }
+
+    @keyframes boatBob {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-6px); }
+    }
+
+    /* Vapur — gidiş geçişi burada (animasyondan ayrı) */
+    .ferry-img-wrap {
+      cursor: pointer;
+      transition: transform 2.2s cubic-bezier(0.15, 0, 0.08, 1),
+                  opacity   0.5s ease 1.8s;
+      display: block;
+    }
+
+    .ferry-img-wrap img {
+      height: 110px;
+      width: auto;
+      display: block;
+      /* mix-blend-mode burada ÇALIŞMAZ (stacking context sorunu)
+         → JS canvas ile beyaz pikseller şeffaflaştırılıyor */
+    }
+
+    .ferry-img-wrap:hover { opacity: 0.9; }
+
+    .ferry-img-wrap.sailing {
+      transform: translateX(900px);
+      opacity: 0;
+    }
+
+    /* "Tüh" mesajı */
+    .tuh-message {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(6px);
+      border-radius: 14px;
+      padding: 10px 20px;
+      box-shadow: 0 4px 20px rgba(26,58,92,0.18);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--navy);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.5s ease 2s;
+      z-index: 10;
+      pointer-events: none;
+      text-align: center;
+    }
+
+    .tuh-message.visible { opacity: 1; }
+
+    .tuh-message .tuh-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--coral);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    /* Tıklamadan önce ipucu */
+    .ferry-hint {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: opacity 0.3s;
+    }
+
+    .ferry-hint.hidden { opacity: 0; pointer-events: none; }
+
+    /* Paylaşım butonları */
+    .share-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s ease 2.1s, opacity 0.4s ease 2.1s;
+    }
+
+    .share-buttons.visible {
+      max-height: 200px;
+      opacity: 1;
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: transform 0.2s, opacity 0.2s;
+      color: #fff;
+    }
+    .share-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
+    .share-ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+    .share-wa { background: #25d366; }
+    .share-tw { background: #000; }
+    .share-fb { background: #1877f2; }
+    .share-copy { background: var(--navy); }
+
+    /* Yeniden oyna */
+    .retry-btn {
+      margin-top: 14px;
+      background: none;
+      border: none;
+      color: var(--muted);
+      font-size: 0.8rem;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      text-decoration: underline;
+      display: none;
+    }
+
+    /* ─── RAKAMLAR ─── */
+    #rakamlar {
+      background: linear-gradient(135deg, #1d4a7a 0%, var(--navy) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #rakamlar::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 50%, rgba(74,155,142,0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(46,109,164,0.18) 0%, transparent 50%);
+    }
+
+    #rakamlar .section-label { color: #a8d8ea; }
+    #rakamlar h2 { color: #fff; }
+    #rakamlar .lead { color: rgba(255,255,255,0.7); }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 28px 16px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-unit {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 6px;
+    }
+
+    .stat-desc { font-size: 0.85rem; color: rgba(255,255,255,0.72); line-height: 1.5; }
+    .stat-card.highlight { background: rgba(74,155,142,0.25); border-color: rgba(74,155,142,0.4); }
+
+    /* ─── KARŞILAŞTIRMA ─── */
+    #karsilastirma { background: var(--sand); }
+
+    .compare-wrap {
+      overflow-x: auto;
+      margin-top: 40px;
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(26,58,92,0.1);
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 520px;
+    }
+
+    .compare-table thead { background: var(--navy); color: #fff; }
+    .compare-table thead th {
+      padding: 16px 20px;
+      text-align: left;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .compare-table tbody tr { background: #fff; }
+    .compare-table tbody tr:nth-child(even) { background: rgba(26,58,92,0.03); }
+    .compare-table tbody tr:hover { background: rgba(74,155,142,0.07); }
+
+    .compare-table tbody td {
+      padding: 14px 20px;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(26,58,92,0.07);
+    }
+    .compare-table tbody td:first-child { font-weight: 600; color: var(--navy); }
+
+    .badge-good { background: rgba(74,155,142,0.15); color: var(--teal); padding: 3px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; white-space: nowrap; }
+    .badge-bad  { background: rgba(224,90,58,0.12);  color: var(--coral); padding: 3px 10px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; white-space: nowrap; }
+
+    /* ─── TALEPLER ─── */
+    #talepler { background: var(--cream); }
+
+    .demand-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .demand-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      background: #fff;
+      border-radius: 16px;
+      padding: 22px;
+      border: 1px solid rgba(26,58,92,0.08);
+      box-shadow: 0 2px 12px rgba(26,58,92,0.05);
+    }
+
+    .demand-num {
+      width: 38px; height: 38px; min-width: 38px;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.88rem;
+    }
+
+    .demand-content h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--navy); margin-bottom: 5px; }
+    .demand-content p  { font-size: 0.86rem; color: var(--muted); line-height: 1.6; }
+
+    /* ─── DESTEK ─── */
+    #destek { background: var(--sand); }
+
+    .destek-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 44px;
+    }
+
+    .destek-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 32px 24px;
+      text-align: center;
+      border: 1px solid rgba(26,58,92,0.08);
+      box-shadow: 0 2px 14px rgba(26,58,92,0.06);
+    }
+
+    .destek-card .d-icon { font-size: 2.6rem; margin-bottom: 16px; }
+    .destek-card h4 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--navy); margin-bottom: 10px; }
+    .destek-card p  { font-size: 0.88rem; color: var(--muted); line-height: 1.65; margin-bottom: 20px; }
+
+    /* ─── İMZALA ─── */
+    #imzala {
+      background: linear-gradient(135deg, #f0faf8 0%, #e8f4f0 100%);
+      border-top: 3px solid var(--teal);
+    }
+
+    .sign-box {
+      background: #fff;
+      border-radius: 24px;
+      padding: 44px 40px;
+      box-shadow: 0 8px 40px rgba(74,155,142,0.15);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .sign-box .sign-icon { font-size: 2.8rem; margin-bottom: 14px; }
+    .sign-box h3 { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--navy); margin-bottom: 10px; }
+    .sign-box p  { color: var(--muted); margin-bottom: 22px; font-size: 0.97rem; }
+
+    .sign-count {
+      display: inline-block;
+      background: rgba(74,155,142,0.1);
+      color: var(--teal);
+      font-size: 0.82rem; font-weight: 600;
+      padding: 5px 14px; border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    /* ─── HİKAYELER ─── */
+    #hikayeler { background: var(--cream); }
+
+    .stories-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .story-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 28px;
+      border: 1px solid rgba(26,58,92,0.08);
+      box-shadow: 0 2px 14px rgba(26,58,92,0.06);
+    }
+
+    .story-card .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem; color: var(--teal);
+      line-height: 0.7; margin-bottom: 12px; opacity: 0.25;
+    }
+
+    .story-card p { font-size: 0.95rem; color: var(--text); line-height: 1.7; font-style: italic; margin-bottom: 14px; }
+    .story-author { font-size: 0.8rem; color: var(--muted); font-weight: 600; }
+
+    /* Form */
+    .story-form {
+      background: var(--sand);
+      border-radius: 18px;
+      padding: 32px;
+      margin-top: 40px;
+    }
+
+    .story-form h4 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 6px; }
+    .story-form .form-desc { color: var(--muted); font-size: 0.88rem; margin-bottom: 10px; }
+
+    .kvkk-note {
+      background: rgba(26,58,92,0.06);
+      border-left: 3px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      padding: 10px 16px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .form-field { display: flex; flex-direction: column; gap: 5px; }
+
+    .form-field label { font-size: 0.8rem; font-weight: 600; color: var(--navy); letter-spacing: 0.3px; }
+
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+      padding: 11px 14px;
+      border: 1.5px solid rgba(26,58,92,0.15);
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: #fff;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus,
+    .form-field select:focus { border-color: var(--teal); }
+    .form-field textarea { min-height: 110px; resize: vertical; }
+    .form-full { grid-column: 1 / -1; }
+
+    .story-share-note {
+      background: rgba(74,155,142,0.08);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-top: 18px;
+      font-size: 0.84rem;
+      color: var(--navy);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.6;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      padding: 40px 24px;
+    }
+
+    footer .footer-logo { font-family: 'Playfair Display', serif; color: #fff; font-size: 1.25rem; margin-bottom: 12px; }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    footer .footer-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.83rem;
+      transition: color 0.2s;
+    }
+    footer .footer-links a:hover { color: #fff; }
+
+    footer p { font-size: 0.8rem; line-height: 1.8; }
+
+    /* ─── TOAST ─── */
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--navy);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      z-index: 1000;
+      transition: transform 0.35s ease;
+      pointer-events: none;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .destek-grid { grid-template-columns: 1fr; max-width: 440px; margin: 44px auto 0; }
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 0 16px; }
+      .nav-links { display: none; }
+
+      section { padding: 60px 18px; }
+      .hero { padding: 90px 18px 120px; }
+
+      .flowers-left, .flowers-right { display: none; }
+
+      .problem-grid { grid-template-columns: 1fr; }
+
+      .stats-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .stat-card { padding: 20px 12px; }
+
+      .demand-list { grid-template-columns: 1fr; }
+      .stories-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+
+      .sign-box { padding: 28px 18px; }
+      #gorsel-bant { height: 200px; }
+
+      .ferry-img-wrap img { height: 75px; }
+      .ferry-scene { height: 140px; }
+      .ferry-bob { bottom: 32px; left: 60px; }
+      .dock { bottom: 48px; }
+      .person-figure { bottom: 70px; font-size: 24px; }
+      .tuh-message { font-size: 0.82rem; white-space: normal; max-width: 260px; }
+
+      .share-btn { font-size: 0.78rem; padding: 9px 14px; }
+    }
+
+    @media (max-width: 440px) {
+      .hero h1 { font-size: 2rem; }
+      .stats-grid { grid-template-columns: 1fr; max-width: 280px; margin: 0 auto; }
+      .hero-cta-group { flex-direction: column; align-items: stretch; }
+      .hero-cta-group .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOAST -->
+<div class="toast" id="toast">Bağlantı kopyalandı! 🎉</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">⚓ Öteki Adalar</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#sorun">Sorun</a></li>
+      <li><a href="#rakamlar">Rakamlar</a></li>
+      <li><a href="#talepler">Talepler</a></li>
+      <li><a href="#imzala">İmzala</a></li>
+      <li><a href="#hikayeler">Sesler</a></li>
+    </ul>
+    <a href="#hikayeler" class="nav-cta">Sesini Duyur</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+
+  <!-- Arka plan: hareket eden saat kodları -->
+  <div class="hero-timecode" aria-hidden="true">
+    <span class="tc-item" style="font-size:9vw; top:12%; left:2%;">21:45</span>
+    <span class="tc-item" style="font-size:5vw; top:38%; left:6%; color:rgba(224,90,58,0.12);">4s 15dk bekleme</span>
+    <span class="tc-item" style="font-size:7vw; top:62%; left:1%;">00:00</span>
+    <span class="tc-item" style="font-size:4vw; top:78%; left:8%; color:rgba(255,255,255,0.06);">Ring sefer — tüm adaları dolaşarak</span>
+    <span class="tc-item" style="font-size:3.5vw; top:88%; left:4%;">01:20'de Kınalıada'ya varırsın</span>
+    <span class="tc-item" style="font-size:5vw; top:22%; right:2%;">02:00</span>
+    <span class="tc-item" style="font-size:3.5vw; top:35%; right:3%; color:rgba(255,255,255,0.06);">Doğrudan sefer — adaları dolaşmadan</span>
+    <span class="tc-item" style="font-size:4vw; top:46%; right:1%;">Kınalıada 02:25 · Burgazada 02:40</span>
+    <span class="tc-item" style="font-size:5vw; top:68%; right:3%; color:rgba(224,90,58,0.18);">4s 15dk bekleme</span>
+  </div>
+
+  <!-- Çiçekler sol -->
+  <div class="flowers-left">
+    <svg width="65" height="65" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="10" fill="white"/><ellipse cx="50" cy="28" rx="8" ry="17" fill="white" opacity=".9"/><ellipse cx="50" cy="72" rx="8" ry="17" fill="white" opacity=".9"/><ellipse cx="28" cy="50" rx="17" ry="8" fill="white" opacity=".9"/><ellipse cx="72" cy="50" rx="17" ry="8" fill="white" opacity=".9"/></svg>
+    <svg width="50" height="82" viewBox="0 0 80 120" fill="none"><line x1="40" y1="120" x2="40" y2="40" stroke="white" stroke-width="3"/><ellipse cx="40" cy="25" rx="12" ry="22" fill="white" opacity=".8"/><ellipse cx="22" cy="48" rx="9" ry="17" fill="white" opacity=".6" transform="rotate(-30 22 48)"/><ellipse cx="58" cy="48" rx="9" ry="17" fill="white" opacity=".6" transform="rotate(30 58 48)"/></svg>
+    <svg width="55" height="55" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="8" fill="white"/><ellipse cx="50" cy="30" rx="6" ry="14" fill="white" opacity=".85"/><ellipse cx="50" cy="70" rx="6" ry="14" fill="white" opacity=".85"/><ellipse cx="30" cy="50" rx="14" ry="6" fill="white" opacity=".85"/><ellipse cx="70" cy="50" rx="14" ry="6" fill="white" opacity=".85"/></svg>
+  </div>
+
+  <!-- Çiçekler sağ -->
+  <div class="flowers-right">
+    <svg width="50" height="82" viewBox="0 0 80 120" fill="none"><line x1="40" y1="120" x2="40" y2="40" stroke="white" stroke-width="3"/><ellipse cx="40" cy="25" rx="12" ry="22" fill="white" opacity=".8"/><ellipse cx="22" cy="48" rx="9" ry="17" fill="white" opacity=".6" transform="rotate(-30 22 48)"/><ellipse cx="58" cy="48" rx="9" ry="17" fill="white" opacity=".6" transform="rotate(30 58 48)"/></svg>
+    <svg width="65" height="65" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="10" fill="white"/><ellipse cx="50" cy="28" rx="8" ry="17" fill="white" opacity=".9"/><ellipse cx="50" cy="72" rx="8" ry="17" fill="white" opacity=".9"/><ellipse cx="28" cy="50" rx="17" ry="8" fill="white" opacity=".9"/><ellipse cx="72" cy="50" rx="17" ry="8" fill="white" opacity=".9"/></svg>
+    <svg width="55" height="55" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="8" fill="white"/><ellipse cx="50" cy="30" rx="6" ry="14" fill="white" opacity=".85"/><ellipse cx="50" cy="70" rx="6" ry="14" fill="white" opacity=".85"/><ellipse cx="30" cy="50" rx="14" ry="6" fill="white" opacity=".85"/><ellipse cx="70" cy="50" rx="14" ry="6" fill="white" opacity=".85"/></svg>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">Kınalıada · Burgazada · 2026</div>
+    <h1>Adaya dönmek <em>hak,</em><br>bekleme değil.</h1>
+    <p class="hero-sub">2026 Bahar Tarifesi ile kaldırılan deniz seferleri Kınalıada ve Burgazada sakinlerini iki yönlü abluka altına aldı. Gece dönemiyoruz, sabah çıkamıyoruz.</p>
+    <div class="hero-cta-group">
+      <a href="#imzala" class="btn btn-primary">✍️ İmzala</a>
+      <a href="#paylasim" class="btn btn-secondary">Paylaş</a>
+      <a href="#sorun" class="btn btn-secondary">Sorunu Anla</a>
+    </div>
+  </div>
+
+  <div class="hero-wave"></div>
+</header>
+
+<!-- GÖRSEL BANT
+     → web/ada-gorselleri/ klasörüne ada fotoğraflarını 1.jpg–5.jpg olarak ekle
+     → Klasör yoksa kartlar lacivert görünür (fallback renk) -->
+<div id="gorsel-bant">
+  <div class="photo-strip">
+    <div class="photo" style="background-image:url('ada-gorselleri/1.jpg')" data-label="Kınalıada"></div>
+    <div class="photo" style="background-image:url('ada-gorselleri/2.jpg')" data-label="Şehir Hatları Vapuru"></div>
+    <div class="photo" style="background-image:url('ada-gorselleri/3.jpg')" data-label="Öteki Adalar"></div>
+    <div class="photo" style="background-image:url('ada-gorselleri/4.jpg')" data-label="Mavi Marmara Motoru"></div>
+    <div class="photo" style="background-image:url('ada-gorselleri/5.jpg')" data-label="Burgazada"></div>
+  </div>
+</div>
+
+<!-- SORUN -->
+<section id="sorun">
+  <div class="container">
+    <div class="section-flowers">🌸 🌼 🌸</div>
+    <div class="section-label">Yaşanan Sorun</div>
+    <h2>İki yönlü bir ulaşım krizi</h2>
+    <p class="lead">2026 Bahar Tarifesi'nde Mavi Marmara Kooperatifi, sessiz sedasız iki seferi kaldırdı. Ada halkı bunu sonradan öğrendi.</p>
+
+    <div class="problem-grid">
+      <div class="problem-card gece">
+        <div class="problem-icon">🌙</div>
+        <h3>Gece mağduriyeti</h3>
+        <p>Bostancı'dan Kınalıada'ya son sefer <strong>21:45</strong>'teki Şehir Hatları ring seferidir (22:10 varış). Bunu kaçıranlar <strong>2 saat 15 dakika ile 4 saat 15 dakika</strong> arasında beklemek zorunda. 23:00 seferi 2026 Bahar Tarifesi ile kaldırıldı.</p>
+      </div>
+      <div class="problem-card sabah">
+        <div class="problem-icon">🌅</div>
+        <h3>Sabah mağduriyeti</h3>
+        <p>06:30 Kınalıada→Bostancı sabah seferi de kaldırıldı. Adada yaşayan çalışanlar artık işlerine zamanında yetişemiyor. Ada halkı <strong>hem gece evine dönemiyor hem sabah işe gitemiyor.</strong></p>
+      </div>
+      <div class="problem-card esit">
+        <div class="problem-icon">⚖️</div>
+        <h3>Adalar arası eşitsizlik</h3>
+        <p>Aynı ilçedeki <strong>Büyükada ve Heybeliada</strong> sakinleri gece 22:00 ve 23:00 seferlerinden yararlanabiliyor. Kınalıada ve Burgazada sakinleri bu haktan mahrum bırakılıyor. Aynı deniz, aynı ilçe, farklı hizmet.</p>
+      </div>
+      <div class="problem-card kirilgan">
+        <div class="problem-icon">🔗</div>
+        <h3>Yapısal kırılganlık</h3>
+        <p>Kınalıada seferlerinin <strong>%69'u</strong> özel bir kooperatife ait. Şehir Hatları günde yalnızca 5 sefer düzenliyor. Kamu denetimi olmayan ticari kararlar, adanın ulaşım hakkını belirliyor.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VAPUR PAYLAŞIM -->
+<section id="paylasim">
+  <div class="container">
+    <div class="section-label">Kampanyayı Yay</div>
+    <h2>Her paylaşım bir sefer kazandırır</h2>
+    <p class="lead">Bu kampanyanın gücü sen ve komşundasın. Vapura bin — sayfayı paylaş.</p>
+
+    <!-- Deniz sahnesi -->
+    <div class="ferry-scene" id="ferryScene">
+
+      <!-- "Tüh" mesajı — vapur gidince çıkar -->
+      <div class="tuh-message" id="tuhMessage">
+        <span class="tuh-big">Tüh! Bu seferi de kaçırdın.</span>
+        Ama henüz geç değil — sesin çıksın, paylaş.
+      </div>
+
+      <!-- İskele -->
+      <div class="dock"></div>
+
+      <!-- Kişi -->
+      <div class="person-figure" id="personFigure">🧍</div>
+
+      <!-- Vapur görseli: ferry-bob sallar, ferry-img-wrap gider -->
+      <div class="ferry-bob" id="ferryBob">
+        <div class="ferry-img-wrap" id="ferryBoat" onclick="sailAway()" title="Vapura tıkla — paylaş!">
+          <img src="vapur-gorsel.png" alt="İstanbul vapuru" id="vapurImg">
+        </div>
+      </div>
+
+      <!-- Dalgalar — sahne içinde, vapur bunların üzerinde -->
+      <div class="wave-strip">
+        <svg viewBox="0 0 1200 64" preserveAspectRatio="none" fill="none">
+          <path d="M0 20 C100 5 200 35 300 20 C400 5 500 35 600 20 C700 5 800 35 900 20 C1000 5 1100 35 1200 20 L1200 64 L0 64Z" fill="rgba(90,170,200,0.9)"/>
+          <path d="M0 30 C80 18 180 44 280 30 C380 18 480 44 580 30 C680 18 780 44 880 30 C980 18 1100 42 1200 30 L1200 64 L0 64Z" fill="rgba(46,109,164,0.85)"/>
+          <path d="M0 40 C60 30 160 52 260 40 C360 30 460 52 560 40 C660 30 760 52 860 40 C960 30 1080 50 1200 40 L1200 64 L0 64Z" fill="rgba(26,74,120,0.7)"/>
+        </svg>
+      </div>
+
+    </div>
+
+    <p class="ferry-hint" id="ferryHint">👆 Vapura tıkla ve paylaşım seçeneklerini gör</p>
+
+    <!-- Paylaşım butonları -->
+    <div class="share-buttons" id="shareButtons">
+      <button class="share-btn share-ig" onclick="shareInstagram()">📸 Instagram</button>
+      <button class="share-btn share-wa" onclick="shareWhatsApp()">💬 WhatsApp</button>
+      <button class="share-btn share-tw" onclick="shareTwitter()">𝕏 Twitter</button>
+      <button class="share-btn share-fb" onclick="shareFacebook()">👍 Facebook</button>
+      <button class="share-btn share-copy" onclick="copyLink()">🔗 Bağlantıyı Kopyala</button>
+    </div>
+
+    <button class="retry-btn" id="retryBtn" onclick="resetFerry()">↩ Tekrar izle</button>
+  </div>
+</section>
+
+<!-- RAKAMLAR -->
+<section id="rakamlar">
+  <div class="container">
+    <div class="section-label">Rakamlarla Gerçek</div>
+    <h2>Sayılar yalan söylemez</h2>
+    <p class="lead">Her rakamın arkasında bir sakin, bir sabah, bir yolculuk var.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card highlight">
+        <div class="stat-num">4s 15dk</div>
+        <div class="stat-unit">Zorunlu Bekleme</div>
+        <div class="stat-desc">21:45 seferini kaçıranların Bostancı iskelesinde beklediği süre</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">%69</div>
+        <div class="stat-unit">Özel Kooperatife Bağımlılık</div>
+        <div class="stat-desc">Kınalıada seferlerinin büyük çoğunluğu özel bir kooperatife ait</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">5</div>
+        <div class="stat-unit">Şehir Hatları Seferi</div>
+        <div class="stat-desc">Günde yalnızca 5 Şehir Hatları seferi — geri kalanı güvencesiz</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">2</div>
+        <div class="stat-unit">Kaldırılan Sefer</div>
+        <div class="stat-desc">06:30 sabah + 23:00 gece — iki yönlü abluka</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KARŞILAŞTIRMA -->
+<section id="karsilastirma">
+  <div class="container">
+    <div class="section-label">Karşılaştırma</div>
+    <h2>Aynı ilçe, farklı hizmet</h2>
+    <p class="lead">Büyükada ile Kınalıada aynı Adalar ilçesine bağlı. Ama sefer tarifesi bambaşka bir hikâye anlatıyor.</p>
+
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Kriter</th>
+            <th>Kınalıada / Burgazada</th>
+            <th>Büyükada / Heybeliada</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Günlük toplam sefer</td>
+            <td>~16 (11'i özel kooperatife ait)</td>
+            <td>16 (kamusal güvenceli)</td>
+          </tr>
+          <tr>
+            <td>Gece 22:00 seferi</td>
+            <td><span class="badge-bad">Yok</span></td>
+            <td><span class="badge-good">Var</span></td>
+          </tr>
+          <tr>
+            <td>Gece 23:00 seferi</td>
+            <td><span class="badge-bad">Kaldırıldı — Bahar 2026</span></td>
+            <td><span class="badge-good">Var</span></td>
+          </tr>
+          <tr>
+            <td>Sabah 06:30 seferi (ada→şehir)</td>
+            <td><span class="badge-bad">Kaldırıldı — Bahar 2026</span></td>
+            <td><span class="badge-good">Mevcut</span></td>
+          </tr>
+          <tr>
+            <td>Şehir Hatları günlük seferi</td>
+            <td>5 sefer</td>
+            <td>Daha fazla seçenek</td>
+          </tr>
+          <tr>
+            <td>Son gece seferi</td>
+            <td>21:45 (Kınalıada 22:10 varış)</td>
+            <td>23:00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- TALEPLER -->
+<section id="talepler">
+  <div class="container">
+    <div class="section-flowers">🌿 🌸 🌿</div>
+    <div class="section-label">Talebimiz</div>
+    <h2>Ne istiyoruz?</h2>
+    <p class="lead">Karmaşık değil. Somut, ölçülebilir, gerçekleştirilebilir talepler.</p>
+
+    <div class="demand-list">
+      <div class="demand-item">
+        <div class="demand-num">1</div>
+        <div class="demand-content">
+          <h4>06:30 sabah seferinin ivedi iadesi</h4>
+          <p>Kaldırılan 06:30 Kınalıada→Bostancı sabah seferinin bir an önce yeniden hizmete alınması. Ada sakinlerinin çalışma hayatına katılımının güvencesidir.</p>
+        </div>
+      </div>
+      <div class="demand-item">
+        <div class="demand-num">2</div>
+        <div class="demand-content">
+          <h4>23:00 gece seferinin iadesi</h4>
+          <p>Bostancı–Kınalıada hattında kaldırılan 23:00 seferinin bir sonraki tarife güncellemesiyle yeniden tarifeye alınması.</p>
+        </div>
+      </div>
+      <div class="demand-item">
+        <div class="demand-num">3</div>
+        <div class="demand-content">
+          <h4>Asgari sefer standardı</h4>
+          <p>Kınalıada ve Burgazada için kamu güvenceli asgari sefer sıklığı standardının yasal zemine oturtulması.</p>
+        </div>
+      </div>
+      <div class="demand-item">
+        <div class="demand-num">4</div>
+        <div class="demand-content">
+          <h4>Kamu hizmeti kapsamına alınma</h4>
+          <p>Bu iki adanın yalnızca ticari kriterlere göre değil, kamu hizmeti yükümlülüğü çerçevesinde değerlendirilmesi.</p>
+        </div>
+      </div>
+      <div class="demand-item">
+        <div class="demand-num">5</div>
+        <div class="demand-content">
+          <h4>Sefer kısıtlamalarına onay zorunluluğu</h4>
+          <p>Operatörlerin sefer iptali ve hat kaldırma kararlarının TDİ/Bakanlık onayına tabi tutulması.</p>
+        </div>
+      </div>
+      <div class="demand-item">
+        <div class="demand-num">6</div>
+        <div class="demand-content">
+          <h4>Ada sakinleriyle istişare mekanizması</h4>
+          <p>Tarife değişikliklerinden önce Kınalıada ve Burgazada sakin temsilcileriyle önceden görüşme yapılması.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTEK OL -->
+<section id="destek">
+  <div class="container">
+    <div class="section-label">Nasıl Destek Olursun?</div>
+    <h2>Sesin önemli</h2>
+    <p class="lead">Bu kampanya kurumsal değil, halk tabanlı. Gücü sen ve çevren.</p>
+
+    <div class="destek-grid">
+      <div class="destek-card">
+        <div class="d-icon">✍️</div>
+        <h4>İmzala</h4>
+        <p>Change.org'daki imza kampanyasına katıl. Yetkililere 500 imzayı birlikte teslim edeceğiz.</p>
+        <a href="#imzala" class="btn btn-primary" style="font-size:0.85rem; padding:10px 20px;">İmzaya Git</a>
+      </div>
+      <div class="destek-card">
+        <div class="d-icon">📣</div>
+        <h4>Paylaş</h4>
+        <p>Bu sayfayı Instagram, WhatsApp, Facebook ve Twitter'da paylaş. Haberi duymayan biri var mı? Ulaş.</p>
+        <button class="btn btn-teal" onclick="shareWhatsApp()" style="font-size:0.85rem; padding:10px 20px;">Paylaş</button>
+      </div>
+      <div class="destek-card">
+        <div class="d-icon">📸</div>
+        <h4>Anlat</h4>
+        <p>Ada bağlantınla bu sorunu yaşadıysan hikayeni paylaş. Birinin sesi, herkese ulaşır.</p>
+        <a href="#hikayeler" class="btn btn-outline" style="font-size:0.85rem; padding:10px 20px;">Sesini Duyur</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- İMZALA -->
+<section id="imzala">
+  <div class="container">
+    <div class="sign-box">
+      <div class="sign-icon">✍️</div>
+      <h3>Sesini Ekle</h3>
+      <p>500 imzaya ulaşıp yetkililere teslim edeceğiz. Her imza bir adım.</p>
+      <div class="sign-count">🖊️ Hedef: 500 imza</div>
+      <a href="https://www.change.org" target="_blank" rel="noopener" class="btn btn-primary" style="display:flex; justify-content:center; margin-bottom:14px;">Change.org'da İmzala</a>
+      <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0;">İmza kampanyası linki yakında aktif olacak.<br>Güncel bilgi için <a href="https://instagram.com/otekiadalar" target="_blank" rel="noopener" style="color:var(--teal);">@otekiadalar</a>'ı takip et.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HİKAYELER -->
+<section id="hikayeler">
+  <div class="container">
+    <div class="section-flowers">🌺 🌼 🌺</div>
+    <div class="section-label">Ada Sesleri</div>
+    <h2>Sesini Duyur</h2>
+    <p class="lead">Bu adalarda yaşıyor, çalışıyor ya da bu adalara bağlı biri misin? Hikayeni paylaş — onu da duyuralım.</p>
+
+    <div class="stories-grid">
+      <div class="story-card">
+        <div class="quote-mark">"</div>
+        <p>Akşam bir arkadaşımla buluştum, eve dönmek için Bostancı'ya geçtim. 21:45'i birkaç dakika kaçırmışım. Sonraki sefer 02:00. Kafede oturup beklemenin başka yolu yoktu.</p>
+        <div class="story-author">— Kınalıada Sakini</div>
+      </div>
+      <div class="story-card">
+        <div class="quote-mark">"</div>
+        <p>06:30 seferinin kalktığını o sabah işe gidemeyince öğrendim. Patronuma nasıl anlattığımı bilen var mı? "Ada sakini" demek yetmedi artık.</p>
+        <div class="story-author">— Kınalıada Sakini</div>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <div class="story-form">
+      <h4>Hikayeni Ekle</h4>
+      <p class="form-desc">Formdan gelen hikayeler moderasyon sonrası bu sayfada ve @otekiadalar hesabında yayımlanabilir. Dilersen adını gizleyebilirsin.</p>
+
+      <div class="kvkk-note">
+        🔒 <strong>KVKK Notu:</strong> Paylaştığın hikaye ve iletişim bilgilerin yalnızca bu kampanya kapsamında kullanılacaktır. Kişisel verilerin hiçbir üçüncü tarafla paylaşılmayacak, iletişim bilgin kamuya açıklanmayacaktır. Moderasyon onayı olmadan hiçbir içerik yayımlanmaz. Formun gönderilmesi bu koşulların kabul edildiği anlamına gelir.
+      </div>
+
+      <form action="https://formspree.io/f/mkoprezk" method="POST">
+        <input type="hidden" name="_subject" value="Öteki Adalar — Yeni Hikaye">
+        <input type="hidden" name="_language" value="tr">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="isim">Ad / Takma ad</label>
+            <input type="text" id="isim" name="isim" placeholder="Kınalıada Sakini" required>
+          </div>
+          <div class="form-field">
+            <label for="baglanti">Ada bağlantın</label>
+            <select id="baglanti" name="baglanti">
+              <option value="">Seç...</option>
+              <option value="kinali-sakin">Kınalıada Sakini</option>
+              <option value="burgaz-sakin">Burgazada Sakini</option>
+              <option value="kinali-ziyaret">Kınalıada Ziyaretçisi</option>
+              <option value="burgaz-ziyaret">Burgazada Ziyaretçisi</option>
+              <option value="diger">Diğer</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field form-full">
+            <label for="hikaye">Hikayeni anlat</label>
+            <textarea id="hikaye" name="hikaye" placeholder="Bu ulaşım sorunu seni ya da aileni nasıl etkiledi? Bir anını paylaş..." required></textarea>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="eposta">E-posta (isteğe bağlı, yayımlanmaz)</label>
+            <input type="email" id="eposta" name="eposta" placeholder="ornek@eposta.com">
+          </div>
+          <div class="form-field" style="justify-content:flex-end; padding-top:22px;">
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Gönder</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">⚓ Öteki Adalar</div>
+  <div class="footer-links">
+    <a href="https://instagram.com/otekiadalar" target="_blank" rel="noopener">📸 @otekiadalar</a>
+    <a href="#sorun">Sorun</a>
+    <a href="#talepler">Talepler</a>
+    <a href="#imzala">İmzala</a>
+    <a href="#hikayeler">Sesler</a>
+  </div>
+  <p>
+    Kınalıada ve Burgazada sakinleri adına hazırlanmıştır · 2026<br>
+    #KınalıyaVapur · #BurgazaVapur · #AdalarEşitlik · #KınalıBekliyor
+  </p>
+</footer>
+
+<script>
+  /* ─── BEYAZ ARKA PLAN KALDIR (canvas) ───
+     Yerel file:// açılışında CORS kısıtı nedeniyle çalışmaz ama görsel görünür.
+     GitHub Pages'te (aynı origin) tam çalışır, beyaz pikseller şeffaflaşır. */
+  function removeWhiteBg(img) {
+    if (!img.naturalWidth || !img.naturalHeight) return;
+    const canvas = document.createElement('canvas');
+    canvas.width  = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    const ctx = canvas.getContext('2d');
+    try {
+      ctx.drawImage(img, 0, 0);
+      const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const d = imgData.data;
+      for (let i = 0; i < d.length; i += 4) {
+        const r = d[i], g = d[i+1], b = d[i+2];
+        if (r > 230 && g > 230 && b > 230) {
+          d[i+3] = 0; // tamamen şeffaf
+        } else if (r > 200 && g > 200 && b > 200) {
+          const brightness = (r + g + b) / 3;
+          d[i+3] = Math.round(255 * (1 - (brightness - 200) / 55));
+        }
+      }
+      ctx.putImageData(imgData, 0, 0);
+      const url = canvas.toDataURL('image/png');
+      if (url && url.length > 200) img.src = url; // geçerli veri kontrolü
+    } catch(e) { /* file:// CORS — görsel olduğu gibi kalır */ }
+  }
+
+  window.addEventListener('load', () => {
+    const img = document.getElementById('vapurImg');
+    if (!img) return;
+    if (img.complete && img.naturalWidth) { removeWhiteBg(img); }
+    else { img.addEventListener('load', () => removeWhiteBg(img), { once: true }); }
+  });
+
+  /* ─── VAPUR ANİMASYONU ─── */
+  let sailed = false;
+
+  function sailAway() {
+    if (sailed) return;
+    sailed = true;
+
+    const bobWrap = document.getElementById('ferryBob');
+    const ferry   = document.getElementById('ferryBoat');
+    const person  = document.getElementById('personFigure');
+    const hint    = document.getElementById('ferryHint');
+    const tuh     = document.getElementById('tuhMessage');
+    const buttons = document.getElementById('shareButtons');
+    const retry   = document.getElementById('retryBtn');
+
+    // 1. Sallanmayı durdur — bir sonraki frame'de gidiş başlasın
+    bobWrap.classList.add('stopped');
+    hint.classList.add('hidden');
+
+    // 2. Vapur sağa gider (küçük gecikme: animasyon durdu, şimdi transition çalışsın)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        ferry.classList.add('sailing');
+      });
+    });
+
+    // 3. Kişi sallama
+    setTimeout(() => { person.classList.add('waving'); }, 700);
+
+    // 4. "Tüh" mesajı — vapur ekrandan çıktıktan sonra
+    setTimeout(() => { tuh.classList.add('visible'); }, 2300);
+
+    // 5. Paylaşım butonları
+    setTimeout(() => {
+      buttons.classList.add('visible');
+      retry.style.display = 'block';
+    }, 2600);
+  }
+
+  function resetFerry() {
+    sailed = false;
+
+    const bobWrap = document.getElementById('ferryBob');
+    const ferry   = document.getElementById('ferryBoat');
+    const person  = document.getElementById('personFigure');
+    const hint    = document.getElementById('ferryHint');
+    const tuh     = document.getElementById('tuhMessage');
+    const buttons = document.getElementById('shareButtons');
+    const retry   = document.getElementById('retryBtn');
+
+    // Geçişi geçici kapat, sıfırla
+    ferry.style.transition = 'none';
+    ferry.classList.remove('sailing');
+    bobWrap.classList.remove('stopped');
+    person.classList.remove('waving');
+    tuh.classList.remove('visible');
+    buttons.classList.remove('visible');
+    hint.classList.remove('hidden');
+    retry.style.display = 'none';
+
+    setTimeout(() => { ferry.style.transition = ''; }, 60);
+  }
+
+  /* ─── PAYLAŞIM FONKSİYONLARI ─── */
+  const SITE_URL   = 'https://otekiadalar.github.io';
+  const SHARE_TEXT = '21:45\'ten sonra Kınalıada ve Burgazada\'ya sefer yok. 06:30 sabah seferi de kaldırıldı. İki yönlü ablukayı kıralım — imzala ve paylaş!\n#KınalıyaVapur #AdalarEşitlik';
+
+  function shareWhatsApp() {
+    if (navigator.share) {
+      navigator.share({ title: 'Öteki Adalar', text: SHARE_TEXT, url: SITE_URL }).catch(() => {});
+    } else {
+      window.open('https://wa.me/?text=' + encodeURIComponent(SHARE_TEXT + '\n\n' + SITE_URL), '_blank');
+    }
+  }
+
+  function shareTwitter() {
+    window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(SHARE_TEXT) + '&url=' + encodeURIComponent(SITE_URL), '_blank');
+  }
+
+  function shareFacebook() {
+    window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(SITE_URL), '_blank');
+  }
+
+  function shareInstagram() {
+    copyToClipboard(SITE_URL);
+    alert('Bağlantı kopyalandı! 📋\nInstagram hikayene yapıştırarak paylaşabilirsin.');
+  }
+
+  function copyLink() {
+    copyToClipboard(SITE_URL);
+  }
+
+  function copyToClipboard(text) {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).then(showToast);
+    } else {
+      const el = document.createElement('textarea');
+      el.value = text;
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      showToast();
+    }
+  }
+
+  function showToast() {
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2800);
+  }
+</script>
+
+</body>
+</html>

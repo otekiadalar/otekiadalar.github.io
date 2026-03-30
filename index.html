@@ -479,8 +479,8 @@
     /* Vapur — gidiş geçişi burada (animasyondan ayrı) */
     .ferry-img-wrap {
       cursor: pointer;
-      transition: transform 2.2s cubic-bezier(0.15, 0, 0.08, 1),
-                  opacity   0.5s ease 1.8s;
+      transition: transform 1.1s cubic-bezier(0.4, 0, 0.2, 1),
+                  opacity   0.3s ease 0.9s;
       display: block;
     }
 
@@ -554,7 +554,7 @@
       max-height: 0;
       overflow: hidden;
       opacity: 0;
-      transition: max-height 0.5s ease 2.1s, opacity 0.4s ease 2.1s;
+      transition: max-height 0.4s ease, opacity 0.35s ease;
     }
 
     .share-buttons.visible {
@@ -1278,7 +1278,7 @@
       <div class="destek-card">
         <div class="d-icon">✍️</div>
         <h4>İmzala</h4>
-        <p>Change.org'daki imza kampanyasına katıl. Yetkililere 500 imzayı birlikte teslim edeceğiz.</p>
+        <p>Change.org'daki imza kampanyasına katıl. Topladığımız imzaları yetkililere birlikte ileteceğiz.</p>
         <a href="#imzala" class="btn btn-primary" style="font-size:0.85rem; padding:10px 20px;">İmzaya Git</a>
       </div>
       <div class="destek-card">
@@ -1303,8 +1303,7 @@
     <div class="sign-box">
       <div class="sign-icon">✍️</div>
       <h3>Sesini Ekle</h3>
-      <p>500 imzaya ulaşıp yetkililere teslim edeceğiz. Her imza bir adım.</p>
-      <div class="sign-count">🖊️ Hedef: 500 imza</div>
+      <p>İmzanı ekle, kurumlarla birlikte bu sesi büyütelim. Her imza bir adım.</p>
       <a href="https://www.change.org" target="_blank" rel="noopener" class="btn btn-primary" style="display:flex; justify-content:center; margin-bottom:14px;">Change.org'da İmzala</a>
       <p style="font-size:0.8rem; color:var(--muted); margin-bottom:0;">İmza kampanyası linki yakında aktif olacak.<br>Güncel bilgi için <a href="https://instagram.com/otekiadalar" target="_blank" rel="noopener" style="color:var(--teal);">@otekiadalar</a>'ı takip et.</p>
     </div>
@@ -1461,16 +1460,16 @@
     });
 
     // 3. Kişi sallama
-    setTimeout(() => { person.classList.add('waving'); }, 700);
+    setTimeout(() => { person.classList.add('waving'); }, 400);
 
-    // 4. "Tüh" mesajı — vapur ekrandan çıktıktan sonra
-    setTimeout(() => { tuh.classList.add('visible'); }, 2300);
+    // 4. "Tüh" mesajı — vapur ekrandan çıktıktan sonra (~1.1s)
+    setTimeout(() => { tuh.classList.add('visible'); }, 1200);
 
-    // 5. Paylaşım butonları
+    // 5. Paylaşım butonları — hemen arkasından
     setTimeout(() => {
       buttons.classList.add('visible');
       retry.style.display = 'block';
-    }, 2600);
+    }, 1400);
   }
 
   function resetFerry() {

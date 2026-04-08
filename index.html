@@ -994,10 +994,9 @@
       <li><a href="#rakamlar">Rakamlar</a></li>
       <li><a href="#talepler">Talepler</a></li>
       <li><a href="#imzala">İmzala</a></li>
-      <li><a href="#hikayeler">Sesler</a></li>
       <li><a href="adalilarin-sesi.html">Adalıların Sesi</a></li>
     </ul>
-    <a href="#hikayeler" class="nav-cta">Sesini Duyur</a>
+    <a href="adalilarin-sesi.html" class="nav-cta">Adalıların Sesi</a>
   </div>
 </nav>
 
@@ -1038,6 +1037,7 @@
     <p class="hero-sub">2026 Bahar Tarifesi ile kaldırılan deniz seferleri Kınalıada ve Burgazada sakinlerini iki yönlü abluka altına aldı. Gece dönemiyoruz, sabah çıkamıyoruz.</p>
     <div class="hero-cta-group">
       <a href="#imzala" class="btn btn-primary">✍️ İmzala</a>
+      <a href="adalilarin-sesi.html" class="btn btn-secondary" style="background:var(--coral);color:#fff;border-color:var(--coral);">🎙️ Adalıların Sesi</a>
       <a href="#paylasim" class="btn btn-secondary">Paylaş</a>
       <a href="#sorun" class="btn btn-secondary">Sorunu Anla</a>
     </div>
@@ -1308,10 +1308,10 @@
         <button class="btn btn-teal" onclick="shareWhatsApp()" style="font-size:0.85rem; padding:10px 20px;">Paylaş</button>
       </div>
       <div class="destek-card">
-        <div class="d-icon">📸</div>
-        <h4>Anlat</h4>
-        <p>Ada bağlantınla bu sorunu yaşadıysan hikayeni paylaş. Birinin sesi, herkese ulaşır.</p>
-        <a href="#hikayeler" class="btn btn-outline" style="font-size:0.85rem; padding:10px 20px;">Sesini Duyur</a>
+        <div class="d-icon">🎙️</div>
+        <h4>Adalıların Sesi</h4>
+        <p>Ada bağlantınla bu sorunu yaşadıysan anlat. Röportaj serisine katıl veya yazılı hikayeni paylaş.</p>
+        <a href="adalilarin-sesi.html" class="btn btn-outline" style="font-size:0.85rem; padding:10px 20px;">Sesini Duyur</a>
       </div>
     </div>
   </div>
@@ -1330,15 +1330,20 @@
   </div>
 </section>
 
-<!-- HİKAYELER -->
-<section id="hikayeler">
+<!-- HİKAYELER — yeni sayfaya yönlendirme banner'ı -->
+<section id="hikayeler" style="background: linear-gradient(135deg, #0d2d4a 0%, #1a4a72 100%); text-align:center;">
   <div class="container">
-    <div class="section-flowers">🌺 🌼 🌺</div>
-    <div class="section-label">Ada Sesleri</div>
-    <h2>Sesini Duyur</h2>
-    <p class="lead">Bu adalarda yaşıyor, çalışıyor ya da bu adalara bağlı biri misin? Hikayeni paylaş — onu da duyuralım.</p>
-
-    <div class="stories-grid">
+    <div class="section-label" style="color:rgba(224,90,58,0.8);">Adalıların Sesi · Röportaj Serisi</div>
+    <h2 style="color:#fff; font-family:'Playfair Display',serif; font-size:clamp(1.8rem,4vw,2.6rem); margin-bottom:16px;">Her ses bu kampanyayı büyütüyor.</h2>
+    <p style="color:rgba(255,255,255,0.55); max-width:520px; margin:0 auto 36px; font-size:1rem; line-height:1.7;">
+      Video röportajlar, yazılı hikayeler ve röportaj başvurusu için yeni sayfamızı ziyaret et.
+    </p>
+    <a href="adalilarin-sesi.html" style="display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:#fff;padding:14px 32px;border-radius:10px;font-weight:700;font-size:1rem;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#c94f31'" onmouseout="this.style.background='var(--coral)'">
+      🎙️ Adalıların Sesi Sayfasına Git →
+    </a>
+  </div>
+  <!-- Eski hikaye kartları ve form kaldırıldı — adalilarin-sesi.html'de -->
+  <div style="display:none"><div class="stories-grid">
       <div class="story-card">
         <div class="quote-mark">"</div>
         <p>Akşam bir arkadaşımla buluştum, eve dönmek için Bostancı'ya geçtim. 21:45'i birkaç dakika kaçırmışım. Sonraki sefer 02:00. Kafede oturup beklemenin başka yolu yoktu.</p>
@@ -1387,18 +1392,7 @@
           </div>
         </div>
         <div class="form-row">
-          <div class="form-field">
-            <label for="eposta">E-posta (isteğe bağlı, yayımlanmaz)</label>
-            <input type="email" id="eposta" name="eposta" placeholder="ornek@eposta.com">
-          </div>
-          <div class="form-field" style="justify-content:flex-end; padding-top:22px;">
-            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Gönder</button>
-          </div>
-        </div>
-      </form>
-
-    </div>
-  </div>
+  </div></div>
 </section>
 
 <!-- FOOTER -->
@@ -1409,7 +1403,7 @@
     <a href="#sorun">Sorun</a>
     <a href="#talepler">Talepler</a>
     <a href="#imzala">İmzala</a>
-    <a href="#hikayeler">Sesler</a>
+    <a href="adalilarin-sesi.html">Adalıların Sesi</a>
   </div>
   <p>
     Kınalıada ve Burgazada sakinleri adına hazırlanmıştır · 2026<br>

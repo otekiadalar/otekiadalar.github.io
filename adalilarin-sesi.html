@@ -242,7 +242,7 @@
     <p>Kınalıada ve Burgazada'da yaşayan ve çalışan sakinler, esnaf, düzenli ziyaretçiler ve her iki adaya gönül bağı olan herkes burada sesleniyor. Adaları seven, adaların hakkını savunan, uzaktan da olsa bu mücadeleye ortak olan tüm sesler bu sayfada bir araya geliyor.</p>
     <div class="hero-stats">
       <div class="hero-stat">
-        <div class="hero-stat-sayi">1</div>
+        <div class="hero-stat-sayi">2</div>
         <div class="hero-stat-label">Röportaj Yayında</div>
       </div>
 <div class="hero-stat">
@@ -263,7 +263,7 @@
     <div class="roportaj-grid">
 
       <!-- Röportaj 01 — Kenan Bey -->
-      <div class="roportaj-kart" onclick="modalAc()">
+      <div class="roportaj-kart" onclick="modalAc('https://www.instagram.com/reel/DW11EvPiO8X/embed')">
         <div class="roportaj-gorsel">
           <img src="ada-gorselleri/kenan_portre.jpg" alt="Kenan Bey Röportajı"
                onerror="this.style.display='none'">
@@ -274,6 +274,22 @@
           <div class="roportaj-isim">Kenan Bey</div>
           <div class="roportaj-unvan">Kınalıada Sakini · Esnaf, Maestro Restaurant · 53 yıldır adada</div>
           <div class="roportaj-alinti">"Sefer yoksa kimse kalmaz, kimse kalmazsa ada da kalmaz."</div>
+          <div class="roportaj-link">▶ İzle →</div>
+        </div>
+      </div>
+
+      <!-- Röportaj 02 — Aret Özcan -->
+      <div class="roportaj-kart" onclick="modalAc('https://www.instagram.com/reel/DXCu_s8CJmM/embed')">
+        <div class="roportaj-gorsel">
+          <img src="ada-gorselleri/aret_portre.jpg" alt="Aret Özcan Röportajı"
+               onerror="this.style.display='none'">
+          <div class="roportaj-seri">Röportaj 02</div>
+          <div class="play-btn">▶</div>
+        </div>
+        <div class="roportaj-bilgi">
+          <div class="roportaj-isim">Aret Özcan</div>
+          <div class="roportaj-unvan">Kınalıada Sakini · 50 yıldır adada</div>
+          <div class="roportaj-alinti">"Vapuru kaçırırsak üç beş saat bekliyoruz. Bunu hak etmiyor muyuz?"</div>
           <div class="roportaj-link">▶ İzle →</div>
         </div>
       </div>
@@ -512,7 +528,7 @@
     <button class="modal-kapat" onclick="modalKapat()">✕</button>
     <div class="modal-iframe-wrap">
       <iframe id="modalIframe"
-        src="https://www.instagram.com/reel/DW11EvPiO8X/embed"
+        src=""
         allowfullscreen scrolling="no"
         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture">
       </iframe>
@@ -521,7 +537,8 @@
 </div>
 
 <script>
-  function modalAc() {
+  function modalAc(url) {
+    document.getElementById('modalIframe').src = url;
     document.getElementById('videoModal').classList.add('acik');
     document.body.style.overflow = 'hidden';
   }
@@ -529,10 +546,7 @@
     if (e && e.target !== document.getElementById('videoModal') && !e.target.classList.contains('modal-kapat')) return;
     document.getElementById('videoModal').classList.remove('acik');
     document.body.style.overflow = '';
-    // iframe'i sıfırla (videoyu durdur)
-    const iframe = document.getElementById('modalIframe');
-    const src = iframe.src;
-    iframe.src = ''; iframe.src = src;
+    document.getElementById('modalIframe').src = '';
   }
 
   function adaBaglantisiDegis(sel) {
